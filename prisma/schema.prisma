@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// npx prisma migrate dev --name init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ToDoList {
+  id      Int      @id @default(autoincrement())
+  dueDate DateTime
+  ToDo    ToDo[]
+  uid     String   @unique @default(uuid())
+}
+
+model ToDo {
+  id          Int      @id @default(autoincrement())
+  list        ToDoList @relation(fields: [listId], references: [uid])
+  listId      String
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+  uid         String   @unique @default(uuid())
+  updatedAt   DateTime @updatedAt
+}
