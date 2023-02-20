@@ -32,6 +32,7 @@
     "class-validator": "^0.14.0",
     "dayjs": "^1.11.7",
     "luxon": "^3.2.1",
+    "prisma-class-generator": "^0.2.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
     "swagger-ui-express": "^4.6.1"

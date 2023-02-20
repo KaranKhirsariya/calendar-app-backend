@@ -7,6 +7,7 @@ export class CreateTodoDto {
   title: string;
 
   @IsString()
+  @IsOptional()
   @ApiPropertyOptional({ type: String })
   description: string;
 

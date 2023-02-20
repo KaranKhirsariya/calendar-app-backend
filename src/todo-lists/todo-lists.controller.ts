@@ -17,10 +17,10 @@ import { FindTodoListQueryDto } from './dto/find-todo-list.dto';
 export class TodoListsController {
   constructor(private readonly todoListsService: TodoListsService) {}
 
-  @Post()
-  create(@Body() createTodoListDto: CreateTodoListDto) {
-    return this.todoListsService.create(createTodoListDto);
-  }
+  // @Post()
+  // create(@Body() createTodoListDto: CreateTodoListDto) {
+  //   return this.todoListsService.create(createTodoListDto);
+  // }
 
   @Get()
   findAll(@Query() query: FindTodoListQueryDto) {

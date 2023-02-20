@@ -15,7 +15,7 @@ export class TodosService {
         list: {
           connectOrCreate: {
             where: {
-              uid: createTodoDto.listId,
+              uid: createTodoDto.listId || '',
             },
             create: {
               dueDate: dayjs(createTodoDto.dueDate).startOf('day').toDate(),

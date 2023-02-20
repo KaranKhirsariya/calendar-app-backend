@@ -6,6 +6,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator prismaClassGenerator {
+    provider = "prisma-class-generator"
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
