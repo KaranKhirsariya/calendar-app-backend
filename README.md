@@ -44,6 +44,18 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## NOTE: create .env file with below parameters
+
+```
+# db connections
+DB_NAME=calendar_app
+DB_HOST=localhost
+DB_PORT=3306
+MYSQL_ROOT_PASSWORD=abcdefg
+MYSQL_USER=express-app
+MYSQL_PASSWORD=express_123
+DATABASE_URL="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
+```
 
 ## Test
 
