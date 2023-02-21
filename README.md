@@ -32,18 +32,6 @@
 $ npm install
 ```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
 ## NOTE: create .env file with below parameters
 
 ```
@@ -55,6 +43,36 @@ MYSQL_ROOT_PASSWORD=abcdefg
 MYSQL_USER=express-app
 MYSQL_PASSWORD=express_123
 DATABASE_URL="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
+```
+## Run below command to start docker container for db:
+```
+docker compose up db
+```
+## ! IMPORTANT: connect using root user to the db and change express-app user permissions to allow rights of DBA
+![DB User rights updated](./ref-db-rights-ss.png)
+
+## start dev migrations using prisma
+```
+npx prisma migrate dev
+```
+
+## (Optional & not needed after prisma migrate) To Seed the db with some defaults:
+```
+npx prisma seed db
+```
+
+
+## Running the app (finally!)
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
 ```
 
 ## Test
